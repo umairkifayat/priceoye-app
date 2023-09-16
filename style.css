@@ -226,10 +226,10 @@ background-color: blueviolet;
 
 
  .h2 {
+    padding: 2px;
      font-size: xx-large;
      color: hsla(0, 0%, 0%, 0.479);
      background-color: #d3f7fa63;
-     margin-bottom: 5px;
      margin-top: 5px;
      font: bold;
  }
@@ -238,9 +238,9 @@ background-color: blueviolet;
      background-color: #48AFFF;
      color: white;
      background-size: 100% 100%;
-     padding: 10px;
+     padding: 20px;
      box-shadow: 5px 5px 10px #6348ffc6;
-
+margin-top: 2rem;
      /* border-radius: 20px 10px 20px 10px; */
      /* width: auto; */
  }

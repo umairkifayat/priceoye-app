@@ -84,11 +84,40 @@ for (let i = 0; i < phones.length; i++) {
    <p  class = "h4"><b> Rom: ${phones[i].rom}</p></b>
     <p  class = "h4"><b>Camera: ${phones[i].camera}</p></b>
     <p  class = "h4"><b>Price: ${phones[i].price}</p></b>
-<button onclick = "addtocart${i}" class="btn">ADD to cart </button>
+<button onclick = "addtocart(${i})" class="btn">ADD to cart </button>
 </div>
 `
 }
-// const array = []; 
+
+
+const array = [];
 function addtocart(index) {
-    console.log(phones[index])
+    // console.log(phones[index]);
+    // console.log([phones]);
+
+    if (array.includes(phones[index]) === true) {
+        // console.log("if chal gya" ,array);
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === (phones[index])) {
+                // console.log("item already majood ha");
+                Swal.fire({
+                    icon: 'info',
+                    title: 'Item Already in Cart',
+                    text: 'You have already added this item to your cart.',
+                });
+            }
+        }
+
     }
+
+
+    else {
+        phones[index].quantity = 1;
+        array.push(phones[index]);
+        Swal.fire({
+            icon: 'success',
+            title: 'Item Added to Cart',
+            text: 'The item has been added to your cart.',
+        });
+    }
+}
