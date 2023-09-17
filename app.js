@@ -1,3 +1,109 @@
+const earbuds = document.querySelector(".earbuds");
+const bluetooth = [
+    {
+        img :  "./assets/earbuds1.webp",
+        para : "M47 wireless Earphone plus",
+        price : "Rs. 3,999"
+    },
+    {
+        img :  "./assets/earbuds3.webp",
+        para : "Air 31 TWS Transparent Earbuds",
+        price : "Rs.2,499",
+    },
+    {
+        img :  "./assets/earbuds4.webp",
+        para : "Samsung Galaxy2 Earbuds",
+        price : "Rs.19,499",
+    },
+    {
+        img :  "./assets/earbuds5.webp",
+        para : "QCY T13 ANC wireless earpuds",
+        price : "Rs.5,499",
+    },
+    {
+        img :  "./assets/earbuds6.webp",
+        para : "Soundpeats  05 Wireless Earbuds",
+        price : "Rs.18,899",
+    },
+    {
+        img :  "./assets/earbuds7.webp",
+        para : "Air 13 Pro TWS Bluetooth Earbuds",
+        price : "Rs.2,299",
+    },
+    {
+        img :  "./assets/earbuds5.webp",
+        para : "QCY T13 ANC Wireless Earphones",
+        price : "Rs.5,499",
+    },
+    {
+       img:"./assets/earbuds13.webp", 
+        para : "Lenove HEOFX Neckband Wireless",
+        price : "Rs.1,240",
+    },
+    {
+        img :  "./assets/earbuds10.webp",
+        para : "12 TWS Touch Sensor Airpods",
+        price : "Rs.1,099",
+    },
+    {
+        img :  "./assets/earbuds11.webp",
+        para : "Soundpeats Air4 wireless Earbuds",
+        price : "Rs.12,499",
+    },{
+        img :  "./assets/earbuds12.webp",
+        para : "Dany Airdots 102",
+        price : "Rs.4,199",
+    },
+{
+    img :  "./assets/earbuds14.webp",
+    para : "M10 TWS Wireless Earbuds",
+    price : "Rs.1,149",
+},
+]
+for (let i = 0; i < bluetooth.length; i++) {
+    earbuds.innerHTML +=`
+    <div class="main">&nbsp;&nbsp;
+    <img class="js-img" src="${bluetooth[i].img}"alt=""><br>
+    <p>${bluetooth[i].para}</p>
+        <b><h3>${bluetooth[i].price}</b></h3>
+        <button onclick = "orderNow(${i})" class="btn">Order Now </button>
+    </div>
+</div>
+`
+    
+}
+const bluetootharr = [];
+function orderNow(index) {
+    // console.log(phones[index]);
+    // console.log([phones]);
+
+    if (bluetootharr.includes(bluetooth[index]) === true) {
+        // console.log("if chal gya" ,array);
+        for (let i = 0; i < bluetootharr.length; i++) {
+            if (bluetootharr[i] === (bluetooth[index])) {
+                // console.log("item already majood ha");
+                Swal.fire({
+                    icon: 'info',
+                    title: 'Item Already in Cart',
+                    text: 'You have already added this item to your cart.',
+                });
+            }
+        }
+
+    }    
+else {
+            bluetooth[index].quantity = 1;
+            bluetootharr.push(bluetooth[index]);
+            Swal.fire({
+                icon: 'success',
+                title: 'Item Added to Cart',
+                text: 'The item has been added to your cart.',
+            });
+        }
+    }
+
+
+
 const mobile = document.querySelector(".mobile")
 
 const phones = [
