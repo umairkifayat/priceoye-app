@@ -157,6 +157,9 @@
      flex: wrap;
      width: 100%;
  }
+ .cart{
+    text-align: center;
+ }
 
  /* .image {
      padding: 20px;
