@@ -195,7 +195,9 @@ for (let i = 0; i < phones.length; i++) {
 `
 }
 
-const addcartarr = []
+const addcartarr = [];
+
+
 function addtocart(index) {
     // console.log(phones[index]);
     if (addcartarr.includes(phones[index])) {
@@ -206,13 +208,23 @@ function addtocart(index) {
             }
         }
     } else {
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Item Added To Cart',
+            showConfirmButton: false,
+            timer: 1500
+        })
         phones[index].quantity = 1
         addcartarr.push(phones[index])
     }
-    console.log(addcartarr);
+    // console.log(addcartarr);
 
 }
 
 function gocart(params) {
+    const cart = JSON.stringify(addcartarr);
+    localStorage.setItem("addcartarr", cart)
+    // console.log("cart called");
     window.location = "./cart.html "
 }
