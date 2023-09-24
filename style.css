@@ -42,7 +42,7 @@
  .log {
      width: 80px;
      height: 30px;
-     padding: 5px;
+     padding: 2px;
      border-radius: black;
      border: 1px solid white;
      color: #48AFFF;
@@ -64,7 +64,8 @@
  }
 
  .log:hover {
-     background-color: burlywood;
+     background-color:#48AFFF;
+     color: white;
  }
 
  /* navbar css end  */
@@ -244,8 +245,7 @@ background-color: blueviolet;
      padding: 20px;
      box-shadow: 5px 5px 10px #6348ffc6;
 margin-top: 2rem;
-     /* border-radius: 20px 10px 20px 10px; */
-     /* width: auto; */
+     border-radius: 20px 10px 20px 10px; 
  }
 
  /* h4{
